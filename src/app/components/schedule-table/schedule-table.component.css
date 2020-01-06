@@ -1,0 +1,26 @@
+table {
+  width: 100%;
+}
+
+.mat-table {
+  min-height: 302px;
+  padding: 18px;
+}
+
+.mat-header-row {
+  background: #2A6FB4;
+  min-height: 40px;
+}
+
+.mat-header-cell {
+  color: #fff;
+  padding: 0px;
+  padding-left: 25px;
+  font-size: 16px;
+}
+
+.mat-cell {
+  padding: 0px;
+  padding-left: 25px;
+  color: lightslategray;
+}

@@ -1,0 +1,22 @@
+<div class="dashboard-continer">
+    <div class="dashboard-header">Recruter-dashboard</div>
+    <div class="candidateData">
+        <mat-card *ngFor="let data of candidateData">
+            <span>
+                <mat-icon aria-hidden="false" aria-label="Example menu icon">person_outline</mat-icon>
+            </span><br />
+            <span class="domain">{{ data.domain }}</span><br />
+            <span class="users">{{ data.users }}</span><br />
+            <span class="candidates">Candidates</span>
+        </mat-card>
+    </div>
+    <div class="table-container">
+        <div class="table-container-header">Schedule List</div>
+        <div class="table-contol">
+            <!-- <app-schedule-table [candidateData]="candidateDataRow"></app-schedule-table> -->
+            <app-schedule-table></app-schedule-table>
+
+        </div>
+    </div>
+
+</div>

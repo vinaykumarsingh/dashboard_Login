@@ -1,0 +1,20 @@
+<div class="sidnav-container">
+  <mat-drawer-container class="example-container" [hasBackdrop]="false">
+    <mat-drawer #drawer [mode]="mode">
+      <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+        [(ngModel)]="selectedOption">
+        <mat-radio-button class="example-radio-button" *ngFor="let option of options" [value]="option">
+          {{option}}
+        </mat-radio-button>
+      </mat-radio-group>
+    </mat-drawer>
+    <mat-drawer-content>
+      <div *ngIf="selectedOption === 'Dashboard'" class="dashboard-card-container">
+        <app-dashboard></app-dashboard>
+      </div>
+      <div *ngIf="selectedOption === 'Onboarding'">
+        <app-onboarding></app-onboarding>
+      </div>
+    </mat-drawer-content>
+  </mat-drawer-container>
+</div>
