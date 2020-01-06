@@ -32,7 +32,7 @@ export class ScheduleTableComponent implements OnInit {
     },
     {
       'id': 'recruiterName',
-      'value': 'Recruter Name'
+      'value': 'recruiter Name'
     },
     {
       'id': 'interviewType',
@@ -58,6 +58,6 @@ export interface CandidateInterface {
   name: string;
   domain: string;
   yearOfExp: string;
-  recruterName: string;
+  recruiterName: string;
   InterviewType: string;
 }
