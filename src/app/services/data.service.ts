@@ -32,9 +32,18 @@ export class DataService {
     return this.http.get('/assets/candidate.json');
   }
 
-  setCandidateTableData(data) {
-    this.candidateData = data;
-    this.nameSub.next(data);
+  setCandidateTableData(data, domain) {
+    if (!domain.length) {
+      this.candidateData = data;
+    } else {
+      if (domain === 'Total Candidate') {
+        this.candidateData = data;
+      } else {
+        this.candidateData = data.filter(i => i.domain === domain);
+      }
+    }
+
+    this.nameSub.next(this.candidateData);
   }
   getCandidateTableData() {
     return this.candidateData;

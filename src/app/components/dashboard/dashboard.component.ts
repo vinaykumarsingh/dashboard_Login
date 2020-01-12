@@ -11,6 +11,8 @@ import * as _ from 'lodash';
 export class DashboardComponent implements OnInit {
   candidateDataRow: any = [];
   candidateData: any = [];
+  domain: any = ''
+
   constructor(private dataService: DataService) { }
 
   ngOnInit() {
@@ -18,10 +20,11 @@ export class DashboardComponent implements OnInit {
       this.candidateDataRow = data['data'];
       console.log("data==>", data)
       this.formatDashboard(this.candidateDataRow);
-      this.dataService.setCandidateTableData(this.candidateDataRow)
+      this.dataService.setCandidateTableData(this.candidateDataRow, this.domain);
     });
 
   }
+
   formatDashboard(data) {
     this.candidateData = _.chain(data)
       // Group the elements of Array based on `domain` property
@@ -31,8 +34,12 @@ export class DashboardComponent implements OnInit {
       .value();
 
     this.candidateData.unshift({ domain: 'Total Candidate', users: data.length })
-
     console.log('result--->', this.candidateData);
+  }
+
+  onCardClick(data) {
+    console.log('data==', data);
+    this.dataService.setCandidateTableData(this.candidateDataRow, data.domain);
   }
 
 }

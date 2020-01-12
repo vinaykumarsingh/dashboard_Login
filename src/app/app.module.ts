@@ -4,7 +4,7 @@ import { CommonModule }                             from '@angular/common';
 import { FormsModule, ReactiveFormsModule }         from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule, MatIconModule, MatTableModule, MatPaginatorModule } from '@angular/material';
+import { MatInputModule, MatIconModule, MatTableModule, MatPaginatorModule, MatSortModule } from '@angular/material';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatButtonModule} from '@angular/material/button';
 import { MatSidenavModule, MatSelectModule } from '@angular/material';
@@ -52,7 +52,8 @@ import { ScheduleTableComponent } from './components/schedule-table/schedule-tab
     MatCardModule,
     MatTableModule,
     MatPaginatorModule,
-    MatMenuModule
+    MatMenuModule,
+    MatSortModule
   ],
   providers: [],
   bootstrap: [AppComponent]

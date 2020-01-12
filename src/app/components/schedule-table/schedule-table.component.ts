@@ -3,6 +3,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { DataService } from 'src/app/services/data.service';
 import { Subscription } from 'rxjs';
+import { MatSort } from '@angular/material/sort';
 
 @Component({
   selector: 'app-schedule-table',
@@ -13,6 +14,8 @@ export class ScheduleTableComponent implements OnInit {
   sub: Subscription;
   displayedColumns = []
   dataSource;
+  @ViewChild(MatSort, { static: true }) sort: MatSort;
+
   columnNames = [
     {
       'id': 'candidateId',
@@ -49,15 +52,7 @@ export class ScheduleTableComponent implements OnInit {
     this.sub = this.dataService.getName.subscribe(data => {
       this.dataSource = new MatTableDataSource(data);
       this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
     });
   }
-}
-
-export interface CandidateInterface {
-  candidateId: string;
-  name: string;
-  domain: string;
-  yearOfExp: string;
-  recruiterName: string;
-  InterviewType: string;
 }

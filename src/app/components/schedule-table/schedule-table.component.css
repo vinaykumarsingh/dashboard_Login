@@ -24,3 +24,11 @@ table {
   padding-left: 25px;
   color: lightslategray;
 }
+
+::ng-deep .mat-sort-header-arrow {
+  color: #fff !important;
+}
+
+th.mat-sort-header-sorted {
+  color: black;
+}
